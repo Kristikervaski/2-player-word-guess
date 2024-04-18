@@ -1,0 +1,57 @@
+<!--Author: Kristi Kervaski
+Date: April 16, 2024-->
+<!-- Page #2:
+Greets User 2 by telling them the word choosers name and how many guesses they have been given for the word, they initially see a "-" for each unguessed letter, and a counter with remaining bad guesses. They must also be shown previously guessed letters. There is a place for them to enter their name and to guess letters. The following is required validation:
+•	User cannot input numbers or special characters
+•	User cannot guess the same letter twice
+•	The user should only have to enter their name once, each guess should only reset the letter guessing field
+Upon guessing the word completely, or exceeding the number of wrong guesses available, they are brought to page 3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Two</title>
+    <link rel="stylesheet" href="Kervaski_style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <a href="" class="logoImg"><img src="Photos/hangmanBackground.jpg"  alt=""></a>
+            <h1 class="logoName">Hangman 2 Player Game</h1>
+        </div>
+    </div>
+    <div class="playerTwo">
+        <label for="nameTwo" class="userName">Name:</label>
+        <input type="text" id="nametwo" placeholder="Enter your username...">
+    </div>
+    <article>
+        <div id="game">
+            <div class="playerTwo">
+            <label for="nameTwo" id="nameTwo">Please enter your name:</label>
+            <input type="text" id="nameTwo">
+            <label for = "playerInput">Your guess:</label>
+            <input type="text" placeholder="Enter a letter" maxlength ="1" id="playerInput">
+            <button type="submit" id="guess">Your Guess</button>
+            <br>
+            </div>
+        </div>
+        <br>
+        <div id="list"> 
+            <lable for ="letters">Wrong Letters selected:</lable>
+                    <p id="letters"></p>
+            <lable for ="rletters">Correct Letter selected</lable>
+                    <p id="rletters"></p>
+        </div>
+        <div id= "counter">    
+            <br><br>
+            <lable for ="countRemaining">Attempts made:</lable>
+                    <p id="countRemaining"></p>
+        </div>
+        
+    </article>  
+    <script src="Kervaski_script.js"></script>
+    <script src="PlayerTwo.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/*Author: Kristi Kervaski
+Date: April 16, 2024*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+html{
+    background-color: #acc0c4;
+    min-height: 50vh;
+    align-items: center;
+    margin: 0; padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.navbar .logo{
+    align-items: center;
+    background-color: white;
+}
+.navbar .logo .logoImg img{
+    height: 3rem;
+}
+
+#directions{ 
+    border:rgb(53, 19, 82);
+    border-style: double;
+    border-color: #463d41;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-family: cursive;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+h3{
+    color:rgba(70, 14, 122, 0.527);
+    text-decoration: none;
+}
+input .invlaid{
+    background-color: #e6d4e1;
+}
+article{
+    font-weight: 100;
+    display: inline-flexbox;
+    grid-template-columns: auto auto;
+    color:rgb(41, 5, 61)
+}
+#start{
+    border:rgb(82, 3, 156);
+    border-width: medium;
+    border-style:inset;
+    color: rgb(43, 4, 61);
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+    font-family: cursive;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+button{
+    padding: 5px 10px;
+    font-style: italic;
+    background-color: #0e0b0d;
+    color: #e6d4e1;
+    text-align: center;
+    image-rendering: auto;
+}
+img{
+    max-width: 100px;
+    height: auto;
+}
