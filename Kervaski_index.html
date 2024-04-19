@@ -30,17 +30,16 @@ User 1 then clicks the "Go" button, which leads to page 2. -->
             </div>
         <h3 id="greeting"></h3>
     </div>
-    <div class="playerOne">
+    <form class="playerOne" id="form" method="GET">
         <label for="nameOne" class="userName">Name:</label>
-        <input type="text" id="nameOne" required placeholder="Enter your username...">
+        <input type="text" name="nameOne" id="nameOne" required placeholder="Enter your username...">
         <label for="secretWord">Word:</label>
         <input type="text" id="secretWord" required placeholder="Secret Word..." minlength="1" maxlength="25">
         <label for="numberGuesses">No. of guesses:</label>
-        <input type="number" id="numberGuesses" required placeholder="# of Guesses..." min="6">
-    </div>
+        <input type="number" id="numberGuesses" name="numberGuesses" required placeholder="# of Guesses..." min="6">
+    </form>
     
 
 <script src="Kervaski_script.js"></script>
-<script src="PlayerTwo.js"></script>
 </body>
 </html>
