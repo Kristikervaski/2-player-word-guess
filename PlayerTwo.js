@@ -3,49 +3,44 @@ Author: Kristi Kervaski
 Date: April 19, 2024
  */
 
-//eventListner to start game--Why doesn't this work? Error says addEventListner is not a function
+//set variables for secret word
+let secretWord = localStorage.getItem("secretWord")
+let word = secretWord[Math.floor(Math.random() * secretWord.length)];
+let numberGuesses = localStorage.getItem("numberGuesses");
 
-const startBtn = document.getElementById("startBtn");
-startBtn.addEventListner("click", startGame);
+//arrays
+const guessedLettersWrong=[];
+const guessedLettersRight=[];
+let gameDisplay = [];
 
 // greeting of user and give parameters of play
 function startGame(){
     const userName = document.getElementById("userName").value;
     const greeting=document.getElementById("greeting");
     const playerOne = localStorage.getItem("playerOne");
-    const numberGuesses = localStorage.getItem("numberGuesses");
     const playerGreeting = (`Hello ${userName},  ${playerOne}  has given you  ${numberGuesses}  tries to guess the word.`);
     document.getElementById("greeting").innerHTML = playerGreeting;
-    // console.log(playerGreeting);
+    gamePlay();
 }
-// startGame();
-
-//arrays and delcared variables
-const guessedLettersWrong=[];
-const guessedLettersRight=[];
-
-
 
 //function to start game get secret word and print number of spaces for secret word
-const secretWord = localStorage.getItem("secretWord")
-let word = secretWord[Math.floor(Math.random() * secretWord.length)];
 function gamePlay(){
-    let gameDisplay = [];
-    //print blanks equal to letter count in randomly selected word 
-    for (let display = 0; display < word.length; display++) {
+    //print blanks equal to letter count in word ---only prints first space!!
+    for (let i = 0; i < word.length; i++) {
         gameDisplay.push("_"); 
+        //console.log(word);
     }
-    document.getElementById("secretWord").textContent = gameDisplay;
+    document.getElementById("Word").textContent = gameDisplay;
 }
-
+let playerGuess = document.getElementById("guess");
+playerGuess.addEventListener("click", guessLetter);
 //guessLetter function 
 function guessLetter(){
-    let numberGuesses = document.getElementById("numberGuesses").value;
     let playerInput = document.getElementById("playerInput");
 		//maximum tries counter
-        numberGuesses ++ ;//counts number of tries
+        numberGuesses -- ;//counts number of tries
         document.getElementById("countRemaining").innerHTML = numberGuesses;
-        if (numberGuesses > 15){
+        if (numberGuesses <= 0){
             alert("You are out turns! Try a new game.")
         }
         //Checks null 
@@ -72,7 +67,7 @@ function guessLetter(){
 		    document.getElementById("letters").innerHTML = guessedLettersWrong; 
 			return;
 		}
-		//if playerInput matches any letter in gameWord then replace blank with correct letter
+		//if playerInput matches any letter replace blank with correct letter--does not reach this loop
         for (let guess = 0; guess < word.length; guess++){	
             if (word[guess] == inputLetter){
                 gameDisplay[guess] = word[guess];
@@ -82,7 +77,7 @@ function guessLetter(){
 			    }
             } 
         }
-        document.getElementById("secretWord").textContent = gameDisplay;
+        document.getElementById("word").textContent = gameDisplay;
         //check if all letters of word are guessed
         if(gameDisplay.join("").replace("_","").length == word.length){
             alert('YOU DID IT! You guessed it correctly!');

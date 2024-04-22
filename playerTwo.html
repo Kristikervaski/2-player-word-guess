@@ -32,13 +32,14 @@ Upon guessing the word completely, or exceeding the number of wrong guesses avai
     <div class="secondPlayer">
         <label for="userName" class="userName">Name:</label>
         <input type="text" id="userName" placeholder="Enter your username...">
-        <button type="submit" id="startBtn">Start game</button>
+        <button type="submit" id="startBtn" onclick="startGame()">Start game</button>
     </div>
     <article>
         <div id="game">
             <label for = "playerInput">Your guess:</label>
             <input type="text" placeholder="Enter a letter" maxlength ="1" id="playerInput">
             <button type="submit" id="guess">Your Guess</button>
+            <p id="Word"></p>
             <br>
             </div>
         </div>
@@ -51,7 +52,7 @@ Upon guessing the word completely, or exceeding the number of wrong guesses avai
         </div>
         <div id= "counter">    
             <br><br>
-            <lable for ="countRemaining">Attempts made:</lable>
+            <lable for ="countRemaining">Attempts left:</lable>
                     <p id="countRemaining"></p>
         </div>
         
