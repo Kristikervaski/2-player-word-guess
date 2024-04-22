@@ -1,11 +1,34 @@
+/* 
+Author: Kristi Kervaski
+Date: April 19, 2024
+ */
+
+//eventListner to start game--Why doesn't this work? Error says addEventListner is not a function
+
+const startBtn = document.getElementById("startBtn");
+startBtn.addEventListner("click", startGame);
+
+// greeting of user and give parameters of play
+function startGame(){
+    const userName = document.getElementById("userName").value;
+    const greeting=document.getElementById("greeting");
+    const playerOne = localStorage.getItem("playerOne");
+    const numberGuesses = localStorage.getItem("numberGuesses");
+    const playerGreeting = (`Hello ${userName},  ${playerOne}  has given you  ${numberGuesses}  tries to guess the word.`);
+    document.getElementById("greeting").innerHTML = playerGreeting;
+    // console.log(playerGreeting);
+}
+// startGame();
+
 //arrays and delcared variables
+const guessedLettersWrong=[];
+const guessedLettersRight=[];
 
-let guessedLettersWrong=[];
-let guessedLettersRight=[];
+
+
+//function to start game get secret word and print number of spaces for secret word
+const secretWord = localStorage.getItem("secretWord")
 let word = secretWord[Math.floor(Math.random() * secretWord.length)];
-
-//function to start game and print number of spaces for secret word
-
 function gamePlay(){
     let gameDisplay = [];
     //print blanks equal to letter count in randomly selected word 
@@ -44,7 +67,7 @@ function guessLetter(){
         //if player input does not match 
         if(!word.includes(inputLetter)){
 			alert("Not that letter!")
-			//add incorrect gues to wrong letter array
+			//add incorrect guess to wrong letter array
             guessedLettersWrong.push(inputLetter);
 		    document.getElementById("letters").innerHTML = guessedLettersWrong; 
 			return;
@@ -64,4 +87,8 @@ function guessLetter(){
         if(gameDisplay.join("").replace("_","").length == word.length){
             alert('YOU DID IT! You guessed it correctly!');
         }
+        window.location.href= "endGame.html?";
 }
+
+// set info to local storage
+localStorage.setItem("userName", userName);

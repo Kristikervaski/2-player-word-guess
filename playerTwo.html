@@ -14,6 +14,7 @@ Upon guessing the word completely, or exceeding the number of wrong guesses avai
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Two</title>
     <link rel="stylesheet" href="Kervaski_style.css">
+   
 </head>
 <body>
     <div id="header">
@@ -22,15 +23,19 @@ Upon guessing the word completely, or exceeding the number of wrong guesses avai
             <h1 class="logoName">Hangman 2 Player Game</h1>
         </div>
     </div>
-    <div class="playerTwo">
-        <label for="nameTwo" class="userName">Name:</label>
-        <input type="text" id="nametwo" placeholder="Enter your username...">
+    <div class="directions">
+        <p>To start game please enter your name.</p>
+        <p>Click the start button to load the word and show the number of guesses allowed.</p>
+        <h3 id="greeting"></h3>
+    </div>
+    
+    <div class="secondPlayer">
+        <label for="userName" class="userName">Name:</label>
+        <input type="text" id="userName" placeholder="Enter your username...">
+        <button type="submit" id="startBtn">Start game</button>
     </div>
     <article>
         <div id="game">
-            <div class="playerTwo">
-            <label for="nameTwo" id="nameTwo">Please enter your name:</label>
-            <input type="text" id="nameTwo">
             <label for = "playerInput">Your guess:</label>
             <input type="text" placeholder="Enter a letter" maxlength ="1" id="playerInput">
             <button type="submit" id="guess">Your Guess</button>
