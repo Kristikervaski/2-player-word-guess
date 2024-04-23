@@ -1,11 +1,5 @@
 <!--Author: Kristi Kervaski
-Date: April 16, 2024-->
-<!-- Page #2:
-Greets User 2 by telling them the word choosers name and how many guesses they have been given for the word, they initially see a "-" for each unguessed letter, and a counter with remaining bad guesses. They must also be shown previously guessed letters. There is a place for them to enter their name and to guess letters. The following is required validation:
-•	User cannot input numbers or special characters
-•	User cannot guess the same letter twice
-•	The user should only have to enter their name once, each guess should only reset the letter guessing field
-Upon guessing the word completely, or exceeding the number of wrong guesses available, they are brought to page 3 -->
+Date: April 22, 2024-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +33,9 @@ Upon guessing the word completely, or exceeding the number of wrong guesses avai
             <label for = "playerInput">Your guess:</label>
             <input type="text" placeholder="Enter a letter" maxlength ="1" id="playerInput">
             <button type="submit" id="guess">Your Guess</button>
-            <p id="Word"></p>
+            <div id="wordContainer">
+                <p id="word"></p>
+            </div>
             <br>
             </div>
         </div>

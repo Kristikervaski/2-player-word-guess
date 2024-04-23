@@ -18,7 +18,7 @@ function loadGameVariables(){
     //put name, word and number of guesses in local storage
     localStorage.setItem("playerOne", playerOne);
     localStorage.setItem("numberGuesses", numberGuesses);
-    localStorage.setItem("secretWord", secretWord);
+    localStorage.setItem("secretWord", secretWord.toLowerCase());
     
     
 
